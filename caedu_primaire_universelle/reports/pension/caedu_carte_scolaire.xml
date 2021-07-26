@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		
+		<template id="report_caedu_carte_scolaire_content">
+			
+				
+			<div style="width: 430px; height: 250px; margin-top:10px; margin-right:30px; border: 5px solid #6B9BBD;padding: 2px; float: left">
+					
+					<!-- entete avec drapeaux border: 1px solid red -->
+					<div style="margin: 0px; width: 98%; height: 50px; ">
+						<div style="margin: 0px; float: left; margin-top: 4px">
+							<img src="/caedu_primaire_universelle/static/images/mini_drapeau_cameroun.png" height="30px"/>
+						</div>
+						
+						<div style="margin: 0px; float: left; font-size: 6px; margin-left: 5px">
+							<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;"><span style="line-height:107%;">REPUBLIQUE DU CAMEROUN</span> <br/>
+								<span >Paix-Travail-Patrie</span> <br/>
+								<span >MINISTERE DE L'EDUCATION DE BASE</span><br/>
+								<span >GROUPE SCOLAIRE BILINGUE LA FRATERNITE </span>
+							</p>
+						</div>
+						
+						<div style="margin: 0px; float: right; margin-top: 4px">
+							<img src="/caedu_primaire_universelle/static/images/armoiries_cameroun_1.png" height="30px"/>
+						</div>
+						
+						<div style="margin: 0px; float: right; font-size: 6px; margin-right: 5px">
+							<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;"><span style="line-height:107%;">REPUBIC OF CAMEROON</span> <br/>
+								<span >Peace-Work-fatherland</span> <br/>
+								<span >MINISTRY BASIC EDUCATION</span><br/>
+								<span >NURSERY AND PRIMARY BILINGUAL SCHOOL GROUP</span>
+							</p>
+						</div>
+						
+					</div>
+					
+					
+					
+					
+					<!-- div titre carte identite scolaire -->
+					<div style="margin: 0px; width: 98%; height: 20px; text-align: center; margin-top: 5px;">
+							<p align="center" style="text-align:center; font-size:9pt; margin-top: 0px"><strong><span> CARTE SCOLAIRE /<em>SCHOOL IDENTITY CARD</em></span></strong> <br/>
+								<span style="font-size:6pt">ANNEE  ACADEMIQUE <span t-field="o.annee_academique_id.name"/> / <em>ACADEMIC YEAR  <span t-field="o.annee_academique_id.libelle_anglais"/></em></span> <br/>
+							</p>
+					</div>
+					
+					<!-- div conteneur pour photo et infos eleve -->
+					<div style="margin: 0px; width: 98%; height: 105px; text-align: center; margin-top: 15px;">
+					
+						<!-- div gauche pour photo  -->
+						<div style="width: 40%; float: left;">
+							
+							<div style="margin: 5px auto; margin-top: 7px; height: 80px; width: 80px; border-top: 1px solid #6B9BBD;">
+								<img t-if="o.eleve_id.image" t-att-src="'data:image/png;base64,%s' % o.eleve_id.image" style="height: 80px;"/>
+							</div>
+							
+							<div style="margin-top: 3px; float: right;">
+								<span style="font-size:9pt;">Matricule : <span t-field="o.eleve_id.matricule"/> </span>
+							</div>
+						</div>
+						
+						<!-- div droite pour infos border: 1px solid #0FA21B;  -->
+						<div style="width: 57%; float: left;  margin-top: 7px">
+							<p align="center" style="text-align:left; font-size:8pt; margin-top: 0px; margin-bottom: 1px">
+								<strong><span>Noms :  </span> </strong> <span><span t-field="o.eleve_id.name"/> </span><br/>
+									<span style="font-size:6pt">         <em>Names</em></span> <br/>
+							</p>
+							<!-- <p align="center" style="text-align:left; font-size:7pt; margin-top: 0px; margin-bottom: 1px">
+								<strong><span>Prénoms : </span> </strong> <span> </span><br/>
+									<span style="font-size:5pt">         <em>Surname </em></span> <br/>
+							</p> -->
+							<p align="center" style="text-align:left; font-size:8pt; margin-top: 0px; margin-bottom: 1px">
+								<strong><span>Né(e) le : </span> </strong> <span><span t-field="o.eleve_id.dob" t-field-options='{"format":"dd/MM/yyyy"}'/> à <span t-field="o.eleve_id.lieu_naissance"/> </span><br/>
+									<span style="font-size:6pt">         <em>Date of birth </em></span> <br/>
+							</p>
+							<p align="center" style="text-align:left; font-size:8pt; margin-top: 0px; margin-bottom: 1px">
+								<strong><span>Classe : </span> </strong> <span><span t-field="o.classe_id.name"/> </span><br/>
+									<span style="font-size:6pt">         <em>Class  </em></span> <br/>
+							</p>
+						</div>
+						
+					</div>
+					
+					<!-- div bas de page -->
+					<div style="margin: 0px; width: 98%; height: 50px;  text-align: center">
+					
+						<!-- div gauche pour photo  -->
+					<!-- 	<div style="width: 40%; float: left;">
+							<div style="margin-top: 0px">
+								<span style="font-size:7pt">Fait le <span t-field="o.date_aujourdhui"/> à Douala </span>
+							</div>
+						</div> -->
+						
+						<!-- div droite pour infos  border: 1px solid #0FA21B;-->
+						<div style="width: 57%; float: right; height: 50px;  ">
+							<div style="margin-top: 0px">
+								<span style="font-size:9pt"> La Directrice </span>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				
+				
+			
+		</template>
+		
+		<template id="report_caedu_carte_scolaire_template">
+			<t t-call="report.html_container">
+				<div class="page" style="font-size: 16px;">
+					<t t-foreach="doc_ids" t-as="doc_id">
+						<t t-raw="translate_doc(doc_id, doc_model,'lang',
+							'caedu_primaire_universelle.report_caedu_carte_scolaire_content')" />
+						
+					</t>
+				</div>
+			</t>
+		</template>
+		
+		<!-- action ihm -->
+    	
+    	<report id="report_caedu_carte_scolaire_action"
+			string="Carte scolaire"
+			model="caedu.pension.inscription"
+			report_type="qweb-pdf"
+			name="caedu_primaire_universelle.report_caedu_carte_scolaire_template"
+		/>
+    	
+        
+    </data>
+</openerp>

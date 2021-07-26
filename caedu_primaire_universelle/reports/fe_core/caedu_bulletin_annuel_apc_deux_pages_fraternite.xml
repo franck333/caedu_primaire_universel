@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<template id="report_caedu_bulletin_annuel_apc_deux_pages_fraternite_content">
+
+			
+			
+			<center>
+			
+					<!-- tableau entete ministere et etablissement --> 
+					<div style="font-size:14pt; width:100%">
+						<t t-call="caedu_primaire_core_reports.report_caedu_entete_base1"/>
+					</div>
+										
+					<!-- tableau libelle bulletin -->
+					<p class="MsoNormal" style="margin-bottom:.0001pt;"><span style="font-size:14.0pt; "> <br /></span></p>
+					<table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;">
+					  <tr>
+					    <td width="225" valign="top" style="padding:0cm 5.4pt 0cm 5.4pt;"><p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;"> <br/></p></td>
+					    <td width="430" valign="top" style="padding:0cm 5.4pt 0cm 5.4pt;"><p class="MsoHeader" align="center" style="text-align:center;"><strong><span style="font-family:'Verdana','sans-serif'; font-size:18.0pt; ">BULLETIN DE NOTES ANNUEL</span></strong></p>
+					     <p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:normal;"><strong><span style="font-family:'Verdana','sans-serif'; font-size:14.0pt; ">Année académique <span t-field="o.libelle_annee_academique"/></span></strong></p></td>
+					    <td width="225" valign="top" style="padding:0cm 5.4pt 0cm 5.4pt;"><p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;"> <br/></p></td>
+					  </tr>
+					</table>
+					
+					<!-- tableau informations sur l eleve: nom, prenom ... -->
+					<p class="MsoNormal" style="margin-bottom:.0001pt;"> <br/></p>
+					<div  style="width: 98%; margin: 0px 0px auto;height:100px; border:0px solid black">   <!-- <div  style="width: 100%; margin: 0px 0px auto;height:80px;"> -->
+
+						<div style="width: 22%; float:left; height: 100px; position:relative; top:-30px; border: 0px #D7D2D2; border-radius: 10px">
+							<center>
+			                	<img t-if="o.eleve_id.image" t-att-src="'data:image/png;base64,%s' % o.eleve_id.image" style="height: 120px; margin-top:0px"/>
+			                </center>
+						</div>
+						
+						<div style="width: 77%; float:left; border:0px solid black">
+							<table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;width: 100%; font-size:14.0pt; ">
+							  <tr>
+							    <td width="70%" valign="top" style="padding:0cm 5.4pt 0cm 5.4pt;"><p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;"><span style="font-family:'Verdana','sans-serif'; ">Nom et Prénom : <strong><span t-field="o.eleve_id.name"/></strong></span></p>
+							      <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;"><span style="font-family:'Verdana','sans-serif';  ">Date de naissance : <strong><span t-field="o.eleve_id.dob" t-field-options='{"format":"dd/MM/yyyy"}'/> <t t-if="o.eleve_id.lieu_naissance"> à <span t-field="o.eleve_id.lieu_naissance"/> </t> </strong></span></p>
+							      <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;"><span style="font-family:'Verdana','sans-serif';  ">Classe : <strong><span t-field="o.classe_id.libelle"/></strong></span></p>
+							      <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;"><span style="font-family:'Verdana','sans-serif';  ">Enseignant(s) : <strong><span t-field="o.classe_id.professeur_titulaire_id.name"/></strong></span></p></td>
+							    <td width="28%" valign="top" style="padding:0cm 5.4pt 0cm 5.4pt;">
+							    <div align="right">
+								    <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;"><span style="font-family:'Verdana','sans-serif';  ">Matricule : <strong><span t-field="o.eleve_id.matricule"/></strong></span></p>
+								      <p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;"><span style="font-family:'Verdana','sans-serif';  ">Redoublant : <span t-if="o.boo_redoublant">Oui</span> <span t-if="not o.boo_redoublant">Non</span></span></p>
+							      </div>
+							      </td>
+							  </tr>
+							</table>
+						</div>
+						
+					</div>
+					
+					
+			<div style="width:100%;">
+			
+			
+			<t t-set="dict_groupe_config" t-value="o.groupe_configuration_bulletin()"/>
+			<t t-set="dict_groupe_config_bas_page" t-value="o.groupe_configuration_bulletin_bas_page()"/>
+			<t t-foreach="dict_groupe_config" t-as="position">
+										
+			 <t t-foreach="o.ligne_groupe_notes_ids" t-as="groupe">
+				<t t-if="groupe.libelle == dict_groupe_config[position]['libelle']">
+											
+						 	
+				<!-- ++++++++++++++++++++++++++ debut Calculer la longueur du groupe d'enseignement +++++++++++++++++++++++++   --> 
+						<t t-set="col_ligne_global1" t-value="0"/> 
+				<t t-foreach="groupe.ligne_note_bulletin_annuel_ids" t-as="lnb">
+					
+					<t t-set="col_ligne_g" t-value="0"/>
+					<t t-if="not lnb.boo_bloquer_oral">  <t t-set="col_ligne_g" t-value="col_ligne_g + 1"/> </t>
+					<t t-if="not lnb.boo_bloquer_ecrite"><t t-set="col_ligne_g" t-value="col_ligne_g + 1"/>  </t>
+					<t t-if="not lnb.boo_bloquer_pratique"><t t-set="col_ligne_g" t-value="col_ligne_g + 1"/>  </t>
+					<t t-if="not lnb.boo_bloquer_savoir_etre"><t t-set="col_ligne_g" t-value="col_ligne_g + 1"/>  </t>
+						
+					<t t-set="col_ligne_global1" t-value="col_ligne_global1 + col_ligne_g"/> 	
+				</t>	
+				<!-- ++++++++++++++++++++++++++ fin Calculer la longueur du groupe d'enseignement +++++++++++++++++++++++++   --> 
+				
+			<div style="width:98%;">                                                                  
+				<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0"  t-att-style="'border-collapse:collapse;font-size: 14px; margin-right:10px;width: 98%; margin-bottom:'+str(dict_groupe_config[position]['down_space'])+'px; margin-top:'+str(dict_groupe_config[position]['up_space'])+'px;'"> <!-- t-attf-style="width:{{pourcentage}}%" -->
+						<tr style="background-color:#FFF;"> <!-- background-color:#5B5B5B; -->
+							<td t-att-rowspan="(col_ligne_global1 + len(groupe.ligne_note_bulletin_annuel_ids) * 3) + 2"  t-att-style="'border-bottom:solid windowtext 1.0pt;border-left: solid windowtext 1.0pt;border-right: solid windowtext 1.0pt;border-top: solid windowtext 1.0pt; width:280px;vertical-align: middle;padding-left: 5px;padding-right: 5px;'"> <!-- text-align:center; -->
+								 <p t-att-style="'font-size: 17pt;text-align:center;'"><b><span t-field="groupe.libelle"/></b>
+								</p>
+							</td>
+						</tr>
+						
+				<tr style="background-color:#97FF97;font-size: 20px;">  <!-- background-color:#5B5B5B; -->
+						<td style="border:solid windowtext 1.0pt; text-align:center; width: 25%">
+							<strong>Compétences</strong> 
+						</td>
+						<td style="border:solid windowtext 1.0pt; text-align:center;">
+							<strong> Unités d'apprentissage</strong> 
+						</td>
+						<t t-foreach="o.ligne_libelle_colonne_ids" t-as="lib_col"> 
+							<td t-att-colspan="2" style="border:solid windowtext 1.0pt;text-align:center;">
+							<strong> <span t-field="lib_col.libelle"/></strong>
+							</td>
+						</t>
+						
+				</tr>
+										
+				<t t-foreach="groupe.ligne_note_bulletin_annuel_ids" t-as="ln"> 
+							
+							<t t-set="col_ligne" t-value="0"/>
+							<t t-if="not ln.boo_bloquer_oral">  <t t-set="col_ligne" t-value="col_ligne + 1"/> </t>
+							<t t-if="not ln.boo_bloquer_ecrite"><t t-set="col_ligne" t-value="col_ligne + 1"/>  </t>
+							<t t-if="not ln.boo_bloquer_pratique"><t t-set="col_ligne" t-value="col_ligne + 1"/>  </t>
+							<t t-if="not ln.boo_bloquer_savoir_etre"><t t-set="col_ligne" t-value="col_ligne + 1"/>  </t>
+							
+										
+										<tr>
+											<td t-att-rowspan="col_ligne + 1" t-att-style="'border:solid windowtext 1.0pt; text-align:center;width:180px;vertical-align: middle;padding-left: 5px;padding-right: 5px;'">
+												<p t-att-style="'text-align:center; font-size: 15pt;'"><strong> <span t-field="ln.libelle_discipline"/> ( <span t-field="ln.note_max"/> points)</strong> </p>
+											</td>
+											<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 14pt;">
+												Évaluation
+											</td>
+											<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 14pt;">
+												Notes
+											</td>
+											<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 14pt;">
+												Cote
+											</td>
+											<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 14pt;">
+												Notes
+											</td>
+											<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 14pt;">
+												Cote
+											</td>
+											<td style="border:solid windowtext 1.0pt; text-align:center;">
+												Notes
+											</td>
+											<td style="border:solid windowtext 1.0pt; text-align:center;">
+												Cote
+											</td>
+											
+										</tr>
+										
+										<t t-set="compteur" t-value="1"/>
+										
+										<t t-if="not ln.boo_bloquer_oral">
+											
+										<tr>
+											<td style="border:solid windowtext 1.0pt;padding-left: 5px;  font-size: 14pt;">
+												<t t-raw="compteur"/>. <span t-field="ln.libelle_oral_fr"/>  
+											</td>
+											
+											<t t-foreach="ln.ligne_note_bulletin_trimestriel_ids" t-as="ln_trim">
+												<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 14pt;">
+													<!-- <span t-field="ln_trim.note_oral"/> -->
+													<t t-if="ln_trim.boo_note_non_existant"><span t-field="ln_trim.caractere_affiche"/></t> <t t-if=" not ln_trim.boo_note_non_existant"> <span t-field="ln_trim.note_oral"/> </t>
+												</td>
+												
+												<td style="border:solid windowtext 1.0pt; border-bottom: none;text-align:center;  font-size: 14pt;">
+													<!-- <span t-field="ln_trim.mention_oral"/> -->
+												</td>
+					   							
+					   						</t>
+					   						
+										</tr>
+										
+										<t t-set="compteur" t-value="compteur + 1"/>
+										</t>
+										
+										<t t-if="not ln.boo_bloquer_ecrite">
+										<tr>
+											<td style="border:solid windowtext 1.0pt;padding-left: 5px;  font-size: 14pt;">
+												<t t-raw="compteur"/>. <span t-field="ln.libelle_ecrite_fr"/>
+											</td>
+											
+											<t t-foreach="ln.ligne_note_bulletin_trimestriel_ids" t-as="ln_trim">
+												<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 14pt;">
+													<!-- <span t-field="ln_trim.note_ecrite"/> -->
+													<t t-if="ln_trim.boo_note_non_existant"><span t-field="ln_trim.caractere_affiche"/></t> <t t-if=" not ln_trim.boo_note_non_existant"> <span t-field="ln_trim.note_ecrite"/> </t>
+												</td>
+												
+												<td style="border:solid windowtext 1.0pt; border-top: none; border-bottom: none;text-align:center;  font-size: 14pt;">
+													<!-- <span t-field="ln_trim.mention_ecrite"/> -->
+												</td>
+					   							
+					   						</t>
+					   						
+										</tr>
+										<t t-set="compteur" t-value="compteur + 1"/>
+										</t>
+										
+										<t t-if="not ln.boo_bloquer_pratique">
+										<tr>
+											<td style="border:solid windowtext 1.0pt;padding-left: 5px;  font-size: 14pt;">
+												<t t-raw="compteur"/>. <span t-field="ln.libelle_pratique_fr"/> 
+											</td>
+											
+											<t t-foreach="ln.ligne_note_bulletin_trimestriel_ids" t-as="ln_trim">
+												<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 14pt;">
+													<!-- <span t-field="ln_trim.note_pratique"/> -->
+													<t t-if="ln_trim.boo_note_non_existant"><span t-field="ln_trim.caractere_affiche"/></t> <t t-if=" not ln_trim.boo_note_non_existant"> <span t-field="ln_trim.note_pratique"/> </t>
+												</td>
+												
+												<td style="border:solid windowtext 1.0pt;border-top: none; border-bottom: none; text-align:center;  font-size: 14pt;">
+													<!-- <span t-field="ln_trim.mention_pratique"/> -->
+												</td>
+					   							
+					   						</t>
+					   						
+										</tr>
+										<t t-set="compteur" t-value="compteur + 1"/>
+										</t>
+										
+										<t t-if="not ln.boo_bloquer_savoir_etre">
+										<tr>
+											<td style="border:solid windowtext 1.0pt;padding-left: 5px;  font-size: 14pt;">
+												<t t-raw="compteur"/>. <span t-field="ln.libelle_savoir_etre_fr"/> 
+											</td>
+											
+											<t t-foreach="ln.ligne_note_bulletin_trimestriel_ids" t-as="ln_trim">
+												<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 14pt;">
+													<!-- <span t-field="ln_trim.note_savoir_etre"/> -->
+													<t t-if="ln_trim.boo_note_non_existant"><span t-field="ln_trim.caractere_affiche"/></t> <t t-if=" not ln_trim.boo_note_non_existant"> <span t-field="ln_trim.note_savoir_etre"/> </t>
+												</td>
+												
+												<td style="border:solid windowtext 1.0pt;border-top: none; border-bottom: none; text-align:center;  font-size: 14pt;">
+													<!-- <span t-field="ln_trim.mention_savoir_etre"/> -->
+												</td>
+					   							
+					   						</t>
+										</tr>
+										<t t-set="compteur" t-value="compteur + 1"/>
+										</t>
+										
+										<tr style="font-weight: bold;">
+											<td colspan="2"  style="border:solid windowtext 1.0pt; text-align:center;  font-size: 14pt;">
+												Total
+											</td>
+											
+											<t t-foreach="ln.ligne_note_bulletin_trimestriel_ids" t-as="ln_trim">
+											
+												<t t-if="ln_trim.boo_note_non_existant">
+													
+													<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 15pt;">
+														<span t-field="ln_trim.caractere_affiche"/>
+													</td>
+													
+													<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 15pt;">
+														
+													</td>
+												</t>
+												
+												<t t-if="not ln_trim.boo_note_non_existant">
+													<t t-if = "ln_trim.mention == 'NA'">
+													<td style="border:solid windowtext 1.0pt; text-align:center; background-color: #F7ACB1;  font-size: 15pt;">
+														<span t-field="ln_trim.note"/>
+													</td>
+													</t>
+													<t t-if = "ln_trim.mention != 'NA'">
+													<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 15pt;">
+														<span t-field="ln_trim.note"/>
+													</td>
+													</t>
+													<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 15pt;">
+														<span t-field="ln_trim.mention"/>
+													</td>
+												</t>
+												
+												<!-- <t t-if = "ln_trim.mention == 'C'">
+												<td style="border:solid windowtext 1.0pt; text-align:center; background-color: #F7ACB1;  font-size: 15pt;">
+													<span t-field="ln_trim.note"/>
+												</td>
+												</t>
+												<t t-if = "ln_trim.mention != 'C'">
+												<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 15pt;">
+													<span t-field="ln_trim.note"/>
+												</td>
+												</t>
+												<td style="border:solid windowtext 1.0pt; text-align:center;  font-size: 15pt;">
+													<span t-field="ln_trim.mention"/>
+												</td> -->
+					   							
+					   						</t>
+					   						
+										</tr>
+											
+										<tr style="font-weight: bold; text-align: center">
+											<td colspan="2" style="border:solid windowtext 1.0pt; text-align:center;  font-size: 15pt;">
+												COTE
+											</td>
+											<td colspan="6" style="border:solid windowtext 1.0pt; text-align:center;  font-size: 15pt;">
+												<span t-field="ln.mention"/>
+											</td>
+										</tr>
+												
+							
+
+						
+				</t>
+				
+				<tr style="font-weight: bold; text-align: center;background-color:#97FF97;">
+					<td colspan="2" style="border:solid windowtext 1.0pt; text-align:center;  font-size: 13pt;">
+						COTE  <span style="padding-left:180px;"> <span t-field="groupe.total_note_max"/> pts</span>
+					</td>
+					<td colspan="7" style="border:solid windowtext 1.0pt; text-align:center;  font-size: 13pt;">
+						<span style="padding-right:120px;"> <span t-field="groupe.total_note_non_coefficier"/> pts</span>
+						<span t-field="groupe.mention"/>
+					</td>
+				</tr>
+				
+										
+			</table>
+									
+			</div>
+			
+			</t>
+			</t>
+			</t>
+			</div>
+			
+			</center>
+			<div style="clear: both;height:50px;"></div>
+			<div t-att-style="'width:99%;margin-bottom:'+str(dict_groupe_config_bas_page['#down_space_recapitulatif_trim'])+'px; margin-top:'+str(dict_groupe_config_bas_page['#up_space_recapitulatif_trim'])+'px;'">
+				<div style="float: right; width: 300px; padding: 10px; margin-top: 5px; font-size: 14pt;">
+						<caption>
+								<p style="text-align: center;">
+									Légende
+								</p>
+						</caption>
+						<br></br>
+						<t t-foreach="o.ligne_moyenne_rang_trimestre_ids" t-as="ln_moy_rang_trim">
+							<span style="width: 300px; text-align: center;margin-left:48px ">
+								<span t-field="ln_moy_rang_trim.abreviation" /> = <span t-field="ln_moy_rang_trim.libelle" />
+							</span>
+							<BR></BR>
+						</t>
+						 <!-- <span style="width: 100px; text-align: center; ">
+						 	UA2 = Unite d'Apprentisage 2
+						</span> -->
+					</div>
+					<div style="float: right; width: 600px; padding: 10px; margin-top: 5px">
+						<table style="width:590px; border-collapse: collapse;" border="2PX" cellpadding="3" >
+							<caption><p style="text-align: center; font-size: 14pt;">RECAPITULATIF TRIMESTRIEL</p>
+							<br></br>
+							</caption>
+								
+								<tbody>
+									<tr>
+										<td style="width: 100px; height: 10px; font-size: 14pt; text-align: center; border: 1px solid black; font-weight: bold;">
+											<span>
+												ELEMENTS
+											</span>
+										</td>
+										
+										<t t-foreach="o.ligne_moyenne_rang_trimestre_ids" t-as="ln_moy_rang_trim">
+							   		   		 <td style="width: 100px; height: 10px; text-align: center; font-size: 14pt; border: 1px solid black; font-weight: bold;">
+										    	
+										    	<span>
+													<span t-field="ln_moy_rang_trim.abreviation" />
+												</span>
+										    </td>
+							   		    </t>
+				   		    
+										<td style="width: 100px; height: 10px; text-align: center; font-size: 14pt; border: 1px solid black; font-weight: bold;">
+											<span>
+												Annuel
+												
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<td style="width: 100px; height: 10px; text-align: center; font-size: 13pt; border: 1px solid black;  font-weight: bold;">
+											TOTAL
+										</td>
+										 
+										 <t t-foreach="o.ligne_moyenne_rang_trimestre_ids" t-as="ln_moy_rang_trim">
+							   		   		 <td style="width: 100px; height: 10px; text-align: center; font-size: 13pt; border: 1px solid black;">
+										    	
+										    	<span>
+													<span t-field="ln_moy_rang_trim.valeur_total"/> / <span t-field="ln_moy_rang_trim.valeur_total_coef"/>
+												</span>
+										    </td>
+							   		    </t>
+										  
+										  
+										  
+										  
+										<td style="width: 100px; height: 10px; text-align: center; font-size: 13pt; border: 1px solid black;">
+											<span t-field="o.total_somme_coefs_fois_notes"/> / <span t-field="o.total_somme_coefs"/>
+									    </td>
+										
+									</tr>
+									<tr>
+										<td style="width: 100px; height: 10px; text-align: center; font-size: 13pt; border: 1px solid black;  font-weight: bold;">
+											MOYENNES
+										</td>
+										 <t t-foreach="o.ligne_moyenne_rang_trimestre_ids" t-as="ln_moy_rang_trim">
+							   		   		 <td style="width: 100px; height: 10px; text-align: center; font-size: 14pt; border: 1px solid black; font-weight: bold;">
+										    	<span t-field="ln_moy_rang_trim.valeur_moyenne" />
+										    </td>
+							   		    </t>
+							   		    
+										
+										
+										<td style="width: 100px; height: 10px; text-align: center; font-size: 14pt; border: 1px solid black; font-weight: bold;">
+											<span t-field="o.moyenne_annuelle_eleve" />
+										</td>
+										
+									</tr>
+									<tr>
+										<td style="width: 100px; height: 10px; text-align: center; font-size: 13pt; border: 1px solid black;  font-weight: bold;">
+											COTE
+										</td>
+										
+										 <t t-foreach="o.ligne_moyenne_rang_trimestre_ids" t-as="ln_moy_rang_trim">
+							   		   		 <td style="width: 100px; height: 10px; text-align: center; font-size: 14pt; border: 1px solid black; font-weight: bold;">
+										    	<span t-field="ln_moy_rang_trim.mention" />
+										    </td>
+							   		    </t>
+										
+										
+										
+										<td style="width: 100px; height: 10px; text-align: center; font-size: 14pt; border: 1px solid black; font-weight: bold;">
+											<span t-field="o.mention" />
+										</td>
+									</tr>
+									<tr>
+										<td style="width: 100px; height: 10px; text-align: center; font-size: 13pt; border: 1px solid black;  font-weight: bold;">
+											RANG
+										</td>
+										<t t-foreach="o.ligne_moyenne_rang_trimestre_ids" t-as="ln_moy_rang_trim">
+							   		   		 <td style="width: 100px; height: 10px; text-align: center; font-size: 14pt; border: 1px solid black; font-weight: bold;">
+										    	<!-- <span t-field="ln_moy_rang_trim.valeur_rang" /> -->
+										    	
+										    	<t t-if = "ln_moy_rang_trim.valeur_rang == 1">
+										    		1 <sup>er</sup>
+										    	</t>
+										    	
+										    	<t t-if = "ln_moy_rang_trim.valeur_rang not in [1]">
+										    		<span t-field="ln_moy_rang_trim.valeur_rang" /> <sup>ème</sup>
+										    	</t>
+									    	
+										    </td>
+							   		    </t>
+							   		    
+										
+										
+										<td style="width: 100px; height: 10px; text-align: center; font-size: 14pt; border: 1px solid black; font-weight: bold;">
+											<!-- <span t-field="o.rang_annuel_eleve" /> -->
+											
+											<t t-if = "o.rang_annuel_eleve == 1">
+									    		1 <sup>er</sup>
+									    	</t>
+									    	
+									    	<t t-if = "o.rang_annuel_eleve not in [1]">
+									    		<span t-field="o.rang_annuel_eleve"/> <sup>ème</sup>
+									    	</t>
+										</td>
+									</tr>
+								</tbody>
+							
+						</table>
+					</div>
+					<div style="float: left;  width: 320px; padding: 10px; margin-top: 5px ; margin-left: 10px">
+						<table style="width:300px; border-collapse: collapse; font-size: 13pt;" border="2PX" cellpadding="3" >
+							<caption>
+								<p style="text-align: center; font-size: 14pt;">
+									Légende
+								</p>
+								<br></br>
+							</caption>
+							
+							<tbody>
+								<tr>
+									<td style="width: 90px; height: 10px;  text-align: center; border: 1px solid black; ">
+										<span>
+											 NA
+										</span>
+									</td>
+									<td style="width: 110px; height: 10px; text-align: center;  border: 1px solid black;">
+										<span>
+											Non acquis
+										</span>
+									</td>
+									<td style="width: 90px; height: 10px; text-align: center;  border: 1px solid black;">
+										<span>
+											0-10
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td style="height: 10px; text-align: center;  border: 1px solid black;">
+										ECA
+									</td>
+									<td style="height: 10px; text-align: center;  border: 1px solid black;">
+										En cours d'acquisision
+									</td>
+									<td style="height: 10px; text-align: center;  border: 1px solid black;">
+										11-14
+									</td>
+								</tr>
+								<tr>
+									<td style="height: 10px; text-align: center;  border: 1px solid black;">
+										A
+									</td>
+									<td style="height: 10px; text-align: center;  border: 1px solid black;">
+										Acquis
+									</td>
+									<td style="height: 10px; text-align: center;  border: 1px solid black;">
+										15-17
+									</td>
+								</tr>
+								<tr>
+									<td style="height: 10px; text-align: center;  border: 1px solid black;">
+										A+
+									</td>
+									<td style="height: 10px; text-align: center;  border: 1px solid black;">
+										Expert
+									</td>
+									<td style="height: 10px; text-align: center;  border: 1px solid black;">
+										18-20
+									</td>
+								</tr>
+							</tbody>
+							
+						</table>
+					</div>
+				
+				</div>
+				
+				<div style="clear: both;height:5px;"></div>
+				<div t-att-style="'width:99%;margin-bottom:'+str(dict_groupe_config_bas_page['#down_space_decision_conseil'])+'px; margin-top:'+str(dict_groupe_config_bas_page['#up_space_decision_conseil'])+'px;'">
+					<div style="height: 110px; text-align: center;   border-top: 1px solid;  margin-top: 15px; margin-bottom: 5px;">
+					<br></br>
+				 		<p style="text-align: center; font-size: 14pt; height: 15px">
+				 			DECISION DU CONSEIL DE CLASSE
+				 		</p>
+			  		</div>
+			  	</div>
+		  		<div t-att-style="'width:99%;margin-bottom:'+str(dict_groupe_config_bas_page['#down_space_observation_signature'])+'px; margin-top:'+str(dict_groupe_config_bas_page['#up_space_observation_signature'])+'px;'">
+				  	<div style="width:100%; border-top: 1px solid; ">
+				  		<table style="width:1280px; font-size: 13pt;" >
+							<caption>
+							<br></br>
+								<!-- <p style="font-size: 14pt; margin-bottom: 50px;">
+									OBSERVATIONS ET SIGNATURES
+								</p> -->
+							</caption>
+							<tbody>
+								<tr>
+									<td style="width: 22%;  height: 60PX; padding-left: 10PX; text-align: center;">
+									<br></br>
+									<p style="font-size: 14pt; margin-bottom: 50px;">
+										SIGNATURE
+									</p>
+										<span style="font-size:15pt">
+											Parent
+										</span>
+									</td>
+									
+									<td style="width: 42%;  padding-left: 10PX; height: 60PX;">
+									<br></br>
+									<p style="font-size: 14pt; margin-bottom: 50px;">
+										OBSERVATION ET SIGNATURE
+									</p>
+										<span style="font-size:15pt">
+											Enseignant(s)
+										</span>
+									</td>
+									
+									<td style="width: *;  height: 60PX; padding-left: 10PX; text-align: center;">
+									<br></br>
+									<p style="font-size: 14pt; margin-bottom: 50px;">
+										OBSERVATION ET SIGNATURE
+									</p>
+										<span style="font-size:15pt">
+											Directrice
+										</span>
+									</td>
+								</tr>
+								<t t-foreach="o.ligne_moyenne_rang_trimestre_ids" t-as="ln_moy_rang_trim">
+									<tr>
+										<td style=" padding-left: 10PX; height: 90PX; ">
+										<br></br>
+											<U><span t-field="ln_moy_rang_trim.abreviation" /></U>: 
+										</td>
+									
+										<td style="border-left: 2PX solid;  height: 60PX; padding-left: 10PX;">
+											
+										</td>
+										<td style="border-left: 2PX solid;   height: 60PX; padding-left: 10PX;">
+											
+										</td>
+									</tr>
+								</t>
+								<!-- <tr>
+									<td style="padding-left: 10PX; height: 120PX;">
+									<br></br>
+										<U>UA2</U>: 
+									</td>
+									<td style="border-left: 2PX solid;   height: 60PX; padding-left: 10PX;">
+										
+									</td>
+									<td style="border-left: 2PX solid;   height: 60PX; padding-left: 10PX;">
+										
+									</td>
+								</tr> -->
+							</tbody>
+						</table>
+				  	</div>
+		  	</div>
+				
+		  		
+		</template>
+
+
+		<template id="report_caedu_bulletin_annuel_apc_deux_pages_fraternite_doc">
+			<div class="page" style="">
+				<t
+					t-call="caedu_primaire_universelle.report_caedu_bulletin_annuel_apc_deux_pages_fraternite_content" />
+			</div>
+		</template>
+
+		<template id="report_caedu_bulletin_annuel_apc_deux_pages_fraternite_template">
+			<t t-call="report.html_container">
+				<t t-foreach="doc_ids" t-as="doc_id">
+					<t
+						t-raw="translate_doc(doc_id, doc_model,
+						'lang',
+						'caedu_primaire_universelle.report_caedu_bulletin_annuel_apc_deux_pages_fraternite_doc')" />
+				</t>
+			</t>
+		</template>
+
+		<!-- action ihm -->
+
+		<report id="report_caedu_bulletin_annuel_apc_deux_pages_fraternite_action"
+			string="Bulletin annuel APC Fraternite" 
+			model="caedu.etude.bulletin.annuel" 
+			report_type="qweb-pdf"
+			name="caedu_primaire_universelle.report_caedu_bulletin_annuel_apc_deux_pages_fraternite_template" />
+
+
+	</data>  
+</openerp>
+

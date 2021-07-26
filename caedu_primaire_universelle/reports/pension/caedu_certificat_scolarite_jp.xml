@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		
+		<template id="report_caedu_certificat_scolarite_content">
+							
+				<div>
+						<!-- <t t-call="caedu_primaire_core_reports.report_caedu_entete_base1" /> -->
+<!-- 						<t t-call="caedu_primaire_universelle.report_caedu_entete_base1_client" /> -->
+					
+					<table border="0" cellspacing="0" cellpadding="0" width="992">
+						 <tr>
+						    <td width="992" valign="top">
+						    <table border="0" cellspacing="0" cellpadding="0" width="991">
+						      <tr>
+						        <td width="421" valign="top">
+							        <p align="center">REPUBLIQUE DU CAMEROUN<b></b>Paix-Travail-Patrie<br>MINISTERE DE L'EDUCATION DE BASE<br>
+							          <strong>ECOLE MAT ET PRIMAIRE BILINGUE &quot; LA FRATERNITE &quot;</strong><br>
+							          <strong></strong>BP : 6081 Douala Téléphone : 233 47 32 53<strong></strong><br>
+							          <strong>Bepanda</strong><br><strong>Année scolaire 2012/2013</strong></br></br></br></br></br>
+							         </p>
+						        </td>
+						        <td width="150" valign="top">
+							        <p align="center"><img width="80" height="44" src="file:///C|/Users/PEGUY/AppData/Roaming/Adobe/Dreamweaver CC 2017/fr_FR/OfficeImageTemp/clip_image002_0001.jpg"><br>
+							          <img width="73" height="65" src="file:///C|/Users/PEGUY/AppData/Roaming/Adobe/Dreamweaver CC 2017/fr_FR/OfficeImageTemp/clip_image004_0001.jpg"> </img></br></img>
+							        </p>
+						        </td>
+						        <td width="420" valign="top">
+							        <p align="center">REPUBLIC OF CAMEROON<br>Peace-Work-Fatherland<br> MINISTRY OF BASE EDUCATION<br>
+							          <strong>NURSERY</strong><strong> AND PRIMARY BILINGUAL SCHOOL &quot;LA FRATERNITE&quot;</strong><br>
+							          PO BOX: 6081 Douala Phone: 233 47 32 53<br>
+							          <strong>Bepanda</strong><strong> </strong><br>
+							          Academic year 2012/2013</br></br></br></br></br></br>
+							         </p>
+						        </td>
+						      </tr>
+						    </table>
+						    </td>
+  						</tr>
+						<tr>
+						    <td width="992" valign="top">
+						   	
+						   	 <p align="center"><strong>CERTIFICAT DE SCOLARITE</strong><br>
+						      <strong><em>SCHOOL ATTENDANCE CERTIFICATE</em></strong></br>
+						     </p>
+						    </td>
+						</tr>
+						<tr>
+						    <td width="992" valign="top">
+						    <table border="0" cellspacing="0" cellpadding="0" width="995">
+						      <tr>
+						        <td width="749" valign="top"></td>
+						        <td width="246" valign="top"><p>Allocation N° / N° Allocation </p></td>
+						      </tr>
+						      <tr>
+						        <td width="749" valign="top"></td>
+						        <td width="246" valign="top"><p align="center"><strong>jkhkjhkj</strong></p></td>
+						      </tr>
+						    </table>
+						    </td>
+					    </tr>
+						  <tr>
+						    <td width="992" valign="top">
+							    <p> Je soussigné(e),<br>
+							      <em> I the undersigned, </em></br>
+							    </p>
+						    </td>
+						  </tr>
+						  <tr>
+							  <td width="992" valign="top">
+							    <table border="0" cellspacing="0" cellpadding="0">
+							      <tr>
+							        <td width="739" valign="top">
+							        	<p> Directeur du <strong>ECOLE MAT ET PRIMAIRE BILINGUE &quot;LA FRATERNITE&quot;<br></br></strong>
+							            <em> The Head Teacher </em><strong>NURSERY AND PRIMARY BILINGUAL SCHOOL &quot;LA FRATERNITE&quot;</strong></p>
+							        </td>
+							        <td width="256" valign="top">
+							        <p>certifie que,<br><em>certifie that,</em></br></p></td>
+							          
+							      </tr>
+							    </table>
+							  </td>
+						  </tr>
+						  <tr>
+						    <td width="992" valign="top"><p> L' Elève<br> <em> The pupil</em></br></p></td>
+						     
+						  </tr>
+						  <tr>
+						    <td width="992" valign="top">
+							    <table border="0" cellspacing="0" cellpadding="0">
+							      <tr>
+							        <td width="371" valign="top">
+							        <p><strong>  Né(e) le :  </strong><br>
+							          <em> Born on the <br></br></em></br>
+							          
+							          </p>
+							         </td>
+							        <td width="624" valign="top">
+							        	<p><strong>à</strong><br><em>at</em></br>  </p>
+							       
+							        </td>
+							      </tr>
+							    </table>
+						    </td>
+						  </tr>
+						  <tr>
+						    <td width="992" valign="top">
+						    <table border="0" cellspacing="0" cellpadding="0">
+						      <tr>
+						        <td width="495" valign="top"><p><strong>Fils ou Fille de :</strong><br>
+						         <em>Son/Daughter of</em></br></p>
+						        </td>
+						        <td width="500" valign="top">
+						        <p><strong>Et de</strong><br>
+						          <em>and</em></br>
+						        </p>
+						       </td>
+						      </tr>
+						    </table>
+						    </td>
+
+						  <tr>
+						    <td width="992" valign="top">
+						     <table border="0" cellspacing="0" cellpadding="0">
+						      <tr>
+						        <td width="749" valign="top">
+						        <p> Et suit régulièrement les cours en classe de : <br>
+						          <em>to study in</em>
+						         </br>
+						         </p>
+						          </td>
+						        <td width="246" valign="top">
+						        <p><strong>Douala le</strong> <em>19/09/2020<br> </br></em><em>Issued in Douala on the</em></p>
+						       
+						        </td>
+						      </tr>
+						     </table>
+						    </td>
+						   </tr>
+							  <tr>
+							    <td width="992" valign="top">
+							    <table border="0" cellspacing="0" cellpadding="0">
+							      <tr>
+							        <td width="749" valign="top"></td>
+							        <td width="246" valign="top"><p><strong>La Directrice<br>
+							        </br></strong><em>The Head Teacher</em></p>
+							        </td>
+							      </tr>
+							    </table>
+							    </td>
+							  </tr>
+							  </tr>
+						</table>
+					
+				</div>
+			
+		</template>
+		
+		
+		<template id="report_caedu_certificat_scolarite_doc">
+			<!-- <t t-call="report.external_layout"> -->
+				<div class="page" style="font-size: 16px;">
+<!-- 					<t t-foreach="docs" t-as="o"> -->
+						<t t-call="caedu_primaire_universelle.report_caedu_certificat_scolarite_content" />
+<!-- 					</t> -->
+				</div>
+			<!-- </t> -->
+		</template>
+		
+		<template id="report_caedu_certificat_scolarite_template">
+			<t t-call="report.html_container">
+				<t t-foreach="doc_ids" t-as="doc_id">
+					<t t-raw="translate_doc(doc_id, doc_model,
+						'lang',
+						'caedu_primaire_universelle.report_caedu_certificat_scolarite_doc')" />
+				</t>
+			</t>
+		</template>
+		
+		<!-- action ihm -->
+    	
+    	<report id="report_caedu_certificat_scolarite_action"
+			string="Certificat de scolarité"
+			model="caedu.pension.inscription"
+			report_type="qweb-pdf"
+			name="caedu_primaire_universelle.report_caedu_certificat_scolarite_template"
+		/>
+    	
+        
+    </data>
+</openerp>

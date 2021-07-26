@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		
+		<template id="report_caedu_mini_entete_recu_2021_eng_client" 
+			inherit_id="caedu_primaire_core_reports.report_caedu_mini_entete_recu_eng_2021"
+			priority="12">
+			
+        	<xpath expr="//div[@name='mini_entete_recu']" position="replace">
+        	             
+             	 <div name="mini_entete_recu">
+					    <div style="width: 100%; margin-top: 10px;  font-size: 14pt; line-height: 18pt">
+					       <div style="float: left; text-align: left">
+					            <span style="font-weight: bold"> UNIVERSEL BILINGUAL NURSERY &amp; PRIMARY SCHOOL </span> <br/>
+					            <span > Po Box : 4080 Douala </span> <br/>
+					            <span > Phone : 653 93 59 54 / 677 35 70 47 </span> <br/>
+					        </div>
+					       
+					        <div style="float: right; margin-right: 50px; text-align: center; font-size: 11pt; line-height: 13pt ">
+					            <i>
+					                <span > Douala, <span t-field="o.date" t-field-options="{&quot;format&quot;:&quot;dd/MM/yy&quot;}"/> <span style="display: inline-block; width: 20px" > </span>   <span t-field="o.date_mouvement" t-field-options="{&quot;format&quot;:&quot;HH:mm&quot;}"/> </span> <br/>
+					                <span style="font-size: 13pt; line-height: 18pt"> School year : <span t-field="o.inscription_id.annee_academique_id.name"/>  <br/> </span> <br/>
+					            </i>
+					        </div>
+				    	</div>
+				  </div>
+			 
+			 </xpath>
+			 
+		</template>
+        
+    </data>
+</openerp>

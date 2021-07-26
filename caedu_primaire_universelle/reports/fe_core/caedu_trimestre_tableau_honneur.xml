@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		
+		<template id="report_caedu_trimestre_tableau_honneur_content">
+			
+				
+				<div style="width: 960px; height:635px; overflow-y: hidden; margin: 0px; padding: 0px;">
+	
+					<!-- background-color: aqua;  -->
+					<div style="width: 100%; height:625px; position: relative; top: 0; left: 0; z-index: 5">
+						
+						<img src="/caedu_primaire_universelle/static/images/cadre.png" width="950px" height="615px"/>
+						
+					</div>
+					
+					<!-- background-color: orange;  -->
+					<div style="width: 96%; height: 490px; position: relative; top: -94%; left: 20px; z-index: 10; ">
+						
+						<!-- entete republique du cameroun ... -->
+						<div style="width: 100%;  font-size:9.0pt;  font-weight: bold"> 
+							<div style="width: 2OOpx; float: left; margin-left: 10px; text-align: center;">
+								<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:normal;"><span>MINISTERE DES ENSEIGNEMENTS DE BASE</span></p>
+								<div style="border:none;border-bottom:solid windowtext 1.0pt;padding:0cm 0cm 5.0pt 0cm; margin-bottom: 5pt">
+								  <p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:normal;border:none;padding:0cm;"><span style="font-size:9.0pt; ">MINISTRY OF BASIC EDUCATION</span></p>
+				
+								</div>
+				
+								<!-- <p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:normal;"><span >COLLEGE BILINGUE LE PHENIX</span></p> -->
+								<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:normal;"><span >ANGLO-SAXON SCHOOL LE MILLENAIRE</span></p>
+							</div>
+							<div style="width: 2OOpx; float: right; margin-right: 30px; text-align: center">
+								<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:normal;"><span>REPUBLIQUE DU CAMEROUN</span></p>
+								<div style="border:none;border-bottom:solid windowtext 1.0pt;padding:0cm 0cm 5.0pt 0cm; margin-bottom: 5pt">
+								  <p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:normal;border:none;padding:0cm;"><span>PAIX-TRAVAIL-PATRIE</span></p>
+				
+								</div>
+				
+								<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:normal;"><span >REPUBLIC OF  CAMEROON</span></p>
+								<p class="MsoNormal" align="center" style="margin-bottom:.0001pt;text-align:center;line-height:normal;"><span >PEACE-WORK-FATHERLAND</span></p>
+							</div>
+						</div>
+				
+						<!-- logo tableau honneur -->
+						<div style="width: 100%; clear: both; text-align: center; margin-top:10px;"> 
+							<img src="/caedu_primaire_universelle/static/images/logo_tableau_honneur.png" style="height: 105px"/>
+						</div>
+				
+						<!-- contenu principal -->
+						<div style="width: 100%; clear: both; text-align: left; padding-left: 15px; font-size:12pt; margin-top:15px;"> 
+							<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;"><strong><span style="font-family:'Comic Sans MS'; ">Est attribué à l'élève 
+								<span style="border-bottom: 2px dotted; padding: 2px; display: inline-block; width: 660px"> <span style="font-size:14pt; ">&#032;&#032;&#032;&#032;&#032; <span t-field="o.eleve_id.name"/> </span> </span>
+							</span></strong></p>
+							<p class="MsoNormal" style="line-height:normal;"><em><span style="font-family:'Comic Sans MS'; ">Has been attributed to the  student</span></em></p>
+							<p class="MsoNormal" style="margin-top:14pt;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;"><strong><span style="font-family:'Comic Sans MS'; font-size:10.0pt; ">Né(e) le
+								<span style="border-bottom: 2px dotted; padding: 2px; display: inline-block; width: 280px"> <span style="font-size:13pt; ">&#032;&#032;&#032;&#032;&#032; <span t-field="o.eleve_id.dob" t-field-options="{&quot;format&quot;:&quot;d MMMM y&quot;}"/> </span> </span>
+							 à 
+							 	<span style="border-bottom: 2px dotted; padding: 2px; display: inline-block; width: 130px"> <span style="font-size:13pt; ">&#032;&#032;&#032;&#032;&#032; <span t-field="o.eleve_id.lieu_naissance"/> </span>  </span>
+							   de la classe de
+							   <span style="border-bottom: 2px dotted; padding: 2px; display: inline-block; width: 170px"> <span style="font-size:13pt; ">&#032;&#032;&#032;&#032;&#032; <span t-field="o.classe_id.name"/> </span>  </span>
+							   </span></strong></p>
+							<p class="MsoNormal" style="margin-bottom:.0001pt;line-height:normal;"><em><span style="font-family:'Comic Sans MS'; ">Born on                                                                at                              form</span></em></p>
+							<p class="MsoNormal" style="margin-top:14pt;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;"><strong><span style="font-family:'Comic Sans MS'; ">Par le conseil de classe pour sa conduite et  son travail du 
+								<span style="border-bottom: 2px dotted; padding: 2px; display: inline-block; width: 240px"> <span style="font-size:13pt; ">&#032;&#032;&#032;&#032;&#032; <span t-field="o.trimestre_id.name"/> </span> </span>
+							</span></strong></p>
+							<p class="MsoNormal" style="line-height:normal;"><em><span style="font-family:'Comic Sans MS'; ">By class council for  his/her academic work and conduct during the 
+								<span style="border-bottom: 2px dotted; padding: 2px; display: inline-block; width: 240px"> <span style="font-size:13pt; ">&#032;&#032;&#032;&#032;&#032; <span t-field="o.trimestre_id.libelle_anglais"/> </span> </span>
+							</span></em></p>
+							<p class="MsoNormal" style="margin-top:14pt;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;"><strong><span style="line-height:107%; font-family:'Comic Sans MS'; ">De l'année scolaire   
+								<span style="border-bottom: 2px dotted; padding: 2px; display: inline-block; width: 130px"> <span style="font-size:13pt; ">&#032;&#032;&#032;&#032;&#032; <span t-field="o.libelle_annee_academique"/> </span> </span>
+							Moyenne
+								<span style="border-bottom: 2px dotted; padding: 2px; display: inline-block; width: 130px; text-align:right"> <span style="font-size:13pt; ">&#032;&#032;&#032;&#032;&#032; <span t-field="o.moyenne_trimestre_eleve"/> </span> </span>
+							/20</span></strong></p>
+							<em><span style="font-family:'Comic Sans MS'; ">Of academic year                                     Average </span></em><span style="line-height:107%; font-family:'Comic Sans MS'; ">                                  </span>
+				
+						</div>
+				
+						<!-- footer signature principal -->
+						<div style="width: 100%; clear: both; text-align: left; padding-right: 25px; font-size:11pt; margin-top:10px"> 
+							<div style="float: right; margin-right: 50px">
+								<p class="MsoNormal"><strong><span style="line-height:107%; ">Douala  le
+									<span style="border-bottom: 2px dotted; padding: 2px; display: inline-block; width: 250px"> <span style="font-size:14pt; ">&#032;&#032;&#032;&#032;&#032; <span t-field="o.date_bulletin" t-field-options="{&quot;format&quot;:&quot;d MMMM y&quot;}"/></span> </span>
+								</span></strong></p>
+								<p class="MsoNormal">
+									<strong>
+										<span style="line-height:107%; font-size:1.0pt; "> <br/></span>
+										<span >Le  principal/ The principal</span><br/>
+										<span >Président  du conseil de classe</span><br/>
+									</strong>
+									<em><span>President  of class council</span></em>
+								</p>
+							</div>
+						</div>
+						
+						
+					</div>
+					
+					
+					
+				</div>
+				
+				
+				
+				
+			
+		</template>
+		
+		
+		<template id="report_caedu_trimestre_tableau_honneur_doc">
+<!-- 			<t t-call="report.external_layout"> -->
+				<div class="page" style="font-size: 16px;">
+<!-- 					<t t-foreach="docs" t-as="o"> -->
+						<t t-call="caedu_primaire_universelle.report_caedu_trimestre_tableau_honneur_content" />
+<!-- 					</t> -->
+				</div>
+<!-- 			</t> -->
+		</template>
+		
+		<template id="report_caedu_trimestre_tableau_honneur_template">
+			<t t-call="report.html_container">
+				<div class="page" style="font-size: 16px;">
+					<t t-foreach="doc_ids" t-as="doc_id">
+						<t t-raw="translate_doc(doc_id, doc_model,'lang',
+							'caedu_primaire_universelle.report_caedu_trimestre_tableau_honneur_content')" />
+						<div style="height:30px; clear: both; width: 100px"></div>
+					</t>
+				</div>
+			</t>
+		</template>
+		
+		<!-- action ihm -->
+    	
+    	<report id="report_caedu_trimestre_tableau_honneur_action"
+			string="Tableau honneur trimestriel"
+			model="caedu.etude.bulletin.trimestriel"
+			report_type="qweb-pdf"
+			name="caedu_primaire_universelle.report_caedu_trimestre_tableau_honneur_template"
+		/>
+    	
+        
+    </data>
+</openerp>

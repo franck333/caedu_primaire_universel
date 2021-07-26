@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		
+		<template id="report_caedu_pension_encaissement_eng_page_principale_content_client" 
+			inherit_id="caedu_primaire_core_reports.report_caedu_pension_encaissement_eng_page_principale_content"
+			priority="12">
+			
+        	<xpath expr="//div[@name='td_bas_page']" position="replace">
+				
+				<div name="td_bas_page" style="width: 100%;">	
+				  	<div style="width: 64%; font-family: Arial; font-size: 13pt; padding-top: 70px; text-align: center; float: left"> GSBU, Po Box : 4080 Douala, Phone : 653 93 59 54 / 677 35 70 47 <br/>
+				  	  <br/>
+				  	</div>
+				  	
+				  	<div style="width: 34%; font-family: Arial; font-size: 13pt; padding-top: 70px; text-align: center; float: left"> Validation date : <span t-field="o.date" t-field-options="{&quot;format&quot;:&quot;d MMMM y&quot;}"/> <br/>
+				  	  <br/>
+				  	</div>
+			  	</div> 
+			
+			</xpath>
+		</template>
+		
+    	
+    </data>
+</openerp>

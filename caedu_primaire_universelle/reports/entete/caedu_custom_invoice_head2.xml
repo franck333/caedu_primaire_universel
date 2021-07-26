@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    	<!-- customiser l'entête des rapports, facture en premier -->
+        <template id="caedu_primaire_universelle.external_layout_header" inherit_id="report.external_layout_header">
+        	<xpath expr="//div[@class='header']" position="replace">
+             <div class="header" style="display:block; z-index:-100; ">
+             
+             	<table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;">
+				  <tr>
+				    <td width="380" valign="top" style="padding:0cm 5.4pt 0cm 5.4pt;">
+				    	<p class="MsoHeader" align="center" style="text-align:center;">
+				    	<span style="font-family:'Verdana','sans-serif'; font-size:8.0pt; ">REPUBLIQUE    DU CAMEROUN</span><br />
+				      <span style="font-family:'Verdana','sans-serif'; font-size:8.0pt; ">Paix    – Travail – Patrie</span><br />
+				      <span style="font-family:'Verdana','sans-serif'; font-size:8.0pt; ">MINISTERE DE L'EDUCATION DE BASE </span><br/>
+				      <span style="font-weight: bold; font-size:8.0pt;">ECOLE MATERNELLE ET PRIMAIRE BILINGUE </span><br/>
+				      <span><strong>"LA FRATERNITE"</strong> </span><br />
+				      <span> BP: 6081 Douala   </span><br />
+				     <span style="font-family:'Verdana','sans-serif'; font-size:8.0pt; ">Téléphone : 233 47 32 53 </span></p></td>
+				    <td width="150" valign="bottom" style="padding:0cm 3.4pt 0cm 3.4pt;">
+				    	
+				    	<br/>
+				    	<center>
+				    		<img src="/caedu_primaire_universelle/static/images/logo_fraternite.png" width="100px" style="position:relative; top:-8px;" />
+				    	</center>
+				    	
+				    </td>
+				    <td width="380" valign="top" style="padding:0cm 5.4pt 0cm 5.4pt;">
+				    	<p class="MsoHeader" align="center" style="text-align:center;">
+				    	<span style="font-family:'Verdana','sans-serif'; font-size:8.0pt; ">REPUBLIC OF CAMEROON</span><br />
+				      <span style="font-family:'Verdana','sans-serif'; font-size:8.0pt; ">Peace – Work – Fatherland</span><br />
+				      <span style="font-family:'Verdana','sans-serif'; font-size:8.0pt; ">MINISTRY OF BASIC EDUCATION </span><br/>
+				      <span style="font-weight: bold;font-size:8.0pt;; ">NURSERY AND PRIMARY BILINGUAL SCHOOL</span><br/>
+				      <span><strong>"LA FRATERNITE" </strong>  </span><br/>
+				      <span> BP: 6081 Douala   </span><br/>
+				     <span style="font-family:'Verdana','sans-serif'; font-size:8.0pt;">Téléphone : 233 47 32 53 </span></p>
+				     </td>
+				  </tr>
+				</table>
+			      
+		      </div>
+			       
+			  <div style="clear:both; height:0;"></div>
+			</xpath>
+        </template>
+        
+    </data>
+</openerp>

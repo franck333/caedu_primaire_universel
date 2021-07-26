@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		
+		
+		<template id="caedu_primaire_universelle.report_caedu_entete_base1_client" inherit_id="caedu_primaire_core_reports.report_caedu_entete_base1">
+        	<xpath expr="//div[@name='div_entete_generale']" position="replace">
+        		
+        		<table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;">
+						  <tr>
+						    <td width="580" valign="top" style="padding:0cm 5.4pt 0cm 5.4pt;">
+						    	<p class="MsoHeader" align="center" style="text-align:center;">
+						    	<span style="font-family:'Verdana','sans-serif';  ">REPUBLIQUE    DU CAMEROUN</span><br />
+						      <span style="font-family:'Verdana','sans-serif';  ">Paix    – Travail – Patrie</span><br />
+						      <span style="font-family:'Verdana','sans-serif';  ">MINISTERE DE L'EDUCATION DE BASE<br/> </span>
+						      <span style="font-weight: bold; ">ECOLE MATERNELLE ET PRIMAIRE BILINGUE </span><br />
+						       <span><strong> "LA FRATERNITE" </strong> </span><br />
+						      <span> BP: 6081 Douala Téléphone : 233 47 32 53  </span><br />
+						      <span style="font-weight: bold;  ">Bepanda </span></p></td>
+						    	<td width="150" valign="bottom" style="padding:0cm 5.4pt 0cm 5.4pt;">
+						    	
+						    	<br/>
+						    	<center >
+						    		<img src="/caedu_primaire_universelle/static/images/logo_fraternite.png" width="130px" style="position:relative; top:-15px;" />
+						    	</center>
+						    	
+						    </td>
+						    <td width="580" valign="top" style="padding:0cm 5.4pt 0cm 5.4pt;">
+						    	<p class="MsoHeader" align="center" style="text-align:center;">
+						    	<span style="font-family:'Verdana','sans-serif';  ">REPUBLIC OF CAMEROON</span><br />
+						      <span style="font-family:'Verdana','sans-serif';  ">Peace – Work – Fatherland</span><br />
+						      <span style="font-family:'Verdana','sans-serif';  ">MINISTRY OF BASIC EDUCATION<br/> </span>
+						     <span style="font-weight: bold;">NURSERY AND PRIMARY BILINGUAL SCHOOL </span><br />
+						     <span><strong> "LA FRATERNITE"  </strong> </span><br />
+						      <span> PO BOX : 6081 Douala Phone : 233 47 32 53   </span><br />
+						     <span style="font-weight: bold;  ">Bepanda </span></p>
+						     </td>
+						  </tr>
+						</table>
+						
+        	</xpath>
+       	</template>
+        
+    </data>
+</openerp>
