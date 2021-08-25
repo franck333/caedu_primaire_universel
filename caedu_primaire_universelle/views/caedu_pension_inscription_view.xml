@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record id="caedu_pension_inscription_view_form_update_universel" model="ir.ui.view">
+            <field name="name">caedu.pension.inscription.form.update.universel</field>
+            <field name="model">caedu.pension.inscription</field>
+            <field name="inherit_id" ref="caedu_fe_pension.caedu_pension_inscription_view_form" />
+            <field name="priority" eval="5" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='total_versements']" position="before">
+                    <field name="ancienne_classe" />
+                </xpath>
+                
+            </field>
+        </record>
+
+	</data>
+</openerp>

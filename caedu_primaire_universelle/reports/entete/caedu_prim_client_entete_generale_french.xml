@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		
+		
+		<template id="caedu_primaire_universelle.report_caedu_entete_base1_client" inherit_id="caedu_primaire_core_reports.report_caedu_entete_base1">
+        	<xpath expr="//div[@name='div_entete_generale']" position="replace">
+        		
+        		<table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none; font-size:12pt; width:100%">
+				  <tr>
+				    <td width="40%" valign="top" style="padding:0cm 5.4pt 0cm 5.4pt;">
+				    	<p class="MsoHeader" align="center" style="text-align:center;">
+				      <span style="font-weight: bold; font-size:14pt; "> <strong> GROUPE SCOLAIRE BILINGUE UNIVERSEL </strong> </span><br />
+				      <span> BP : 4080 Douala </span><br />
+				      <span style="font-weight: bold; ">Tél : 652 69 60 58 / 699 34 77 10 </span></p>
+				    </td>
+				    
+				    <td width="18%" valign="bottom" style="padding:0cm 5.4pt 0cm 5.4pt;">
+				    	
+				    	<br/>
+				    	<center >
+				    		<img src="/caedu_primaire_universelle/static/images/logo_ecole.png" width="120px" style="position:relative; top:-30px;" />
+				    	</center>
+				    	
+				    </td>
+				   
+				    <td width="40%" valign="top" style="padding:0cm 5.4pt 0cm 5.4pt;">
+				    	<p class="MsoHeader" align="center" style="text-align:center;">
+				     <span style="font-weight: bold; font-size:14pt; ">UNIVERSEL BILINGUAL NURSERY &amp; PRIMARY SCHOOL </span><br />
+				      <span> Po Box : 4080 Douala  </span><br />
+				     <span style="font-weight: bold; ">Phone : 652 69 60 58 / 677 35 70 47 </span></p>
+				     </td>
+				  </tr>
+				</table>
+						
+        	</xpath>
+       	</template>
+        
+    </data>
+</openerp>

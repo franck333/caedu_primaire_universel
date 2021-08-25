@@ -14,17 +14,21 @@
     'data': [
         
 		
+        #les vues        
+        'views/caedu_scolarite_eleve_view.xml', 
+        'views/caedu_pension_inscription_view.xml', 
+        
 		# les entetes
         'reports/entete/caedu_custom_invoice_head2.xml',  #heritage
-        'reports/entete/caedu_fraternite_entete_generale_french.xml', #heritage
-        'reports/entete/caedu_fraternite_mini_entete_bulletins_apc.xml', #heritage
+        'reports/entete/caedu_prim_client_entete_generale_french.xml', #heritage
+        'reports/entete/caedu_prim_client_mini_entete_bulletins_apc.xml', #heritage
         'reports/entete/caedu_fraternite_french_entete_recu.xml',
         'reports/entete/caedu_fraternite_eng_entete_recu.xml',
         'reports/entete/caedu_fraternite_french_entete_recu_new.xml',
         'reports/entete/caedu_fraternite_french_entete_recu_eng_new.xml',
         
-        'reports/entete/caedu_primaire_mini_entete_recu_2021.xml',
-        'reports/entete/caedu_primaire_mini_entete_recu_eng_2021.xml',
+        'reports/entete/caedu_primaire_mini_entete_recu_2021.xml',  #heritage
+        'reports/entete/caedu_primaire_mini_entete_recu_eng_2021.xml',  #heritage
         
         
         

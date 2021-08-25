@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+         
+        <record id="caedu_scolarite_eleve_view_form_update_universel" model="ir.ui.view">
+            <field name="name">caedu.scolarite.eleve.form.update.universel</field>
+            <field name="model">caedu.scolarite.eleve</field>
+            <field name="inherit_id" ref="caedu_fe_core.caedu_scolarite_eleve_view_form" />
+            <field name="priority" eval="12" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='religion']" position="after">
+                    <field name="ancienne_classe" />
+                </xpath>
+                
+                <!-- retirer les champs fonction et metier pour eux -->
+                <xpath expr="//field[@name='fonction']" position="replace"> </xpath>
+                <xpath expr="//field[@name='metier_id']" position="replace"> </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

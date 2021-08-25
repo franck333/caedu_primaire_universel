@@ -9,7 +9,7 @@
         	<xpath expr="//div[@name='td_bas_page']" position="replace">
 				
 				<div name="td_bas_page" style="width: 100%;">	
-				  	<div style="width: 64%; font-family: Arial; font-size: 13pt; padding-top: 70px; text-align: center; float: left"> GSBU, BP : 4080 Douala, Tél : 653 93 59 54 / 677 35 70 47 <br/>
+				  	<div style="width: 64%; font-family: Arial; font-size: 13pt; padding-top: 70px; text-align: center; float: left"> Signature du parent <br/>
 				  	  <br/>
 				  	</div>
 				  	

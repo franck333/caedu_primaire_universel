@@ -18,7 +18,7 @@
 					       
 					        <div style="float: right; margin-right: 50px; text-align: center; font-size: 11pt; line-height: 13pt ">
 					            <i>
-					                <span > Douala, <span t-field="o.date" t-field-options="{&quot;format&quot;:&quot;dd/MM/yy&quot;}"/> <span style="display: inline-block; width: 20px" > </span>   <span t-field="o.date_mouvement" t-field-options="{&quot;format&quot;:&quot;HH:mm&quot;}"/> </span> <br/>
+					                <span > Douala, <span t-field="o.date" t-field-options="{&quot;format&quot;:&quot;dd/MM/yy&quot;}"/> <span style="display: inline-block; width: 20px" > </span>   <span t-field="o.date" t-field-options="{&quot;format&quot;:&quot;HH:mm&quot;}"/> </span> <br/>
 					                <span style="font-size: 13pt; line-height: 18pt"> School year : <span t-field="o.inscription_id.annee_academique_id.name"/>  <br/> </span> <br/>
 					            </i>
 					        </div>
