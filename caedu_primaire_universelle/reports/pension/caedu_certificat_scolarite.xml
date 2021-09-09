@@ -13,30 +13,32 @@
 							<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="width: 98%;  height:700px; border-collapse:collapse; border:none;">
 							 <tr align="center">
 							    <td width="1292" valign="top">
-							    <table border="1" cellspacing="0" cellpadding="0" width="1191" align="center" >
-							      <tr>
-							        <td width="721" valign="top">
-								        <p align="center" style ="font-size: 10pt">REPUBLIQUE DU CAMEROUN<br>Paix-Travail-Patrie<br>MINISTERE DE L'EDUCATION DE BASE<br>
-								          <strong>ECOLE MATERNELLE ET PRIMAIRE BILINGUE &quot; LA FRATERNITE &quot;</strong><br>
-								          <strong></strong>BP : 6081 Douala Téléphone : 233 47 32 53<strong></strong><br>
-								          <strong>Bepanda</strong><br><strong><!-- Année scolaire 2012/2013 --></strong></br></br></br></br></br></br>
-								         </p>
-							        </td>
-							        <td width="150" valign="top">
-								        <p align="center"><img width="80" height="44" src="/caedu_primaire_universelle/static/images/logo_certif1.png"><br>
-								          <img width="73" height="65" src="/caedu_primaire_universelle/static/images/logo_certif2.png"> </img></br></img>
-								        </p>
-							        </td>
-							        <td width="721" valign="top">
-								        <p align="center" style ="font-size: 10pt">REPUBLIC OF CAMEROON<br>Peace-Work-Fatherland<br> MINISTRY OF BASE EDUCATION<br>
-								          <strong>NURSERY</strong><strong> AND PRIMARY BILINGUAL SCHOOL &quot; LA FRATERNITE &quot;</strong><br>
-								          PO BOX: 6081 Douala Phone: 233 47 32 53<br>
-								          <strong>Bepanda</strong> <br>
-								         <strong> <!-- Academic year 2012/2013 --></strong></br></br></br></br></br></br>
-								         </p>
-							        </td>
-							      </tr>
-							    </table>
+							   <table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none; font-size:12pt; width:100%">
+									  <tr>
+									    <td width="40%" valign="top" style="padding:0cm 5.4pt 0cm 5.4pt; margin-top:20px">
+									    	<p class="MsoHeader" align="center" style="text-align:center;">
+									      <span style="font-weight: bold; font-size:14pt; "> <strong> GROUPE SCOLAIRE BILINGUE UNIVERSEL </strong> </span><br />
+									      <span> BP : 4080 Douala </span><br />
+									      <span style="font-weight: bold; ">Tél : 652 69 60 58 / 699 34 77 10 </span></p>
+									    </td>
+									    
+									    <td width="18%" valign="bottom" style="padding:0cm 5.4pt 0cm 5.4pt;">
+									    	
+									    	<br/>
+									    	<center >
+									    		<img src="/caedu_primaire_universelle/static/images/logo_ecole.png" width="120px" style="position:relative; top:-30px;" />
+									    	</center>
+									    	
+									    </td>
+									   
+									    <td width="40%" valign="top" style="padding:0cm 5.4pt 0cm 5.4pt;">
+									    	<p class="MsoHeader" align="center" style="text-align:center;">
+									     <span style="font-weight: bold; font-size:14pt; ">UNIVERSEL BILINGUAL NURSERY &amp; PRIMARY SCHOOL </span><br />
+									      <span> Po Box : 4080 Douala  </span><br />
+									     <span style="font-weight: bold; ">Phone : 652 69 60 58 / 677 35 70 47 </span></p>
+									     </td>
+									  </tr>
+									</table>
 							    </td>
 	  						</tr>
 	  						<tr>
@@ -52,7 +54,7 @@
 							    <table border="1" cellspacing="0" cellpadding="0" width="1190" style="margin-left:20pt">
 							      <tr>
 							        <td width="749" valign="top"></td>
-							        <td width="255" valign="top" style="border:1pt solid black; text-align: center"><p>Allocation N° / N° Allocation </p></td>
+							        <td width="245" valign="top" style="border:1pt solid black; text-align: center"><p>Allocation N° / N° Allocation </p></td>
 							      </tr>
 							      <tr>
 							        <td width="749" valign="top"></td>
@@ -77,8 +79,8 @@
 								    <table border="0" cellspacing="0" cellpadding="0" style="margin-left:20pt; width: 97%">
 								      <tr>
 								        <td width="729" valign="top">
-								        	<p style="margin-left:70px;"> Directeur de<span style="padding-left:15pt"> <strong>ECOLE MAT ET PRIMAIRE BILINGUE &quot;LA FRATERNITE&quot;<br></br></strong></span>
-								            <em> The Head Teacher </em><strong>NURSERY AND PRIMARY BILINGUAL SCHOOL &quot;LA FRATERNITE&quot;</strong></p>
+								        	<p style="margin-left:70px;"> Directeur du<span style="padding-left:15pt"> <strong>GROUPE SCOLAIRE BILINGUE UNIVERSEL <br></br></strong></span>
+								            <em> The Head Teacher </em><strong>UNIVERSEL BILINGUAL NURSERY &amp; PRIMARY SCHOOL</strong></p>
 								        </td>
 								        <td width="300" valign="top">
 								        <p>certifie que,<br><em>certifie that,</em></br></p></td>
